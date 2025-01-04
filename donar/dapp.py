@@ -13,11 +13,9 @@ app.config.from_object(Config)
 mysql = MySQL(app)
 app.secret_key = os.urandom(24)
 
-# Twilio configuration
-TWILIO_ACCOUNT_SID = "AC1a62abd1762aae85d4e7b8e162b7e07b"
-TWILIO_AUTH_TOKEN = "2babaeba0b58e42b620cd7cb14526f9a"
-TWILIO_PHONE_NUMBER = "+12697784409"
-client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+
+
+
 
 # Donor Registration Route
 @app.route('/register', methods=['GET', 'POST'])
