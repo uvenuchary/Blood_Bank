@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #d32f2f;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #1976d2;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            text-decoration: none;
+            color: #00796b;
+            margin-top: 20px;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button style */
+        .add-donor-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .add-donor-btn:hover {
+            background-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    
+    <h2>Requests</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Blood Type</th>
+            <th>Units</th>
+            <th>Contact</th>
+            <th>send status</th>
+        </tr>
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor[0] }}</td>
+            <td>{{ donor[1] }}</td>
+            <td>{{ donor[2] }}</td>
+            <td>{{ donor[3] }}</td>
+            <td>{{ donor[4] }}</td>
+            <td>
+                <form method="POST" action="/update_status/{{ donor[0] }}">
+                    <select name="status">
+                        <option value="Pending" {% if request[5] == 'Pending' %}selected{% endif %}>Pending</option>
+                        <option value="Completed" {% if request[5] == 'Completed' %}selected{% endif %}>Completed</option>
+                    </select>
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Donars</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Type</th>
+            <th>Contact</th>
+        </tr>
+        {% for recipient in recipients %}
+        <tr>
+            <td>{{ recipient[0] }}</td>
+            <td>{{ recipient[1] }}</td>
+            <td>{{ recipient[2] }}</td>
+            <td>{{ recipient[3] }}</td>
+            <td>{{ recipient[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("/static/bg.jpg") no-repeat center center fixed;
+            background-size: cover; /* Ensures the image covers the full viewport */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Restrict content width */
+            text-align: center;
+        }
+    
+        h1 {
+            margin-bottom: 30px;
+            color: red;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    
+        a.card {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #fff;
+            background-color: #154de7;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+    
+        a.card:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+    
+        a.card:active {
+            background-color: #9c1c1c;
+            transform: scale(0.95);
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Welcome to the Blood Bank Management System</h1>
+            <a class="card" href="/stock">View Blood Stock</a> <br><br>
+            <a class="card" href="/donor/add">Add Donor</a>  <br><br>
+            <a class="card" href="/recipient/request">Request Blood</a> <br> <br>
+            <a class="card" href="/admin">Admin Panel</a>
+        </div>
+    </div>
+</body>
+</html>

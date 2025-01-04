@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('') no-repeat center center fixed; /* Replace with actual URL */
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            margin: 0 auto;
+            padding: 50px;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #0056b3;
+        }
+
+        .button {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button:active {
+            background-color: #003f7f;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666666fd;
+        }
+
+        @media (max-width: 600px) {
+            .button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>welcome</h1>
+        <a href="#request-forms" class="button">Request Forms</a>
+        <a href="#tracking-status" class="button">Tracking Status</a>
+        <a href="#payments" class="button">Payments</a>
+        <a href="#rewards" class="button">Rewards</a>
+        <div class="footer">&copy; 2024 Hospital Services. All Rights Reserved.</div>
+    </div>
+</body>
+</html>
